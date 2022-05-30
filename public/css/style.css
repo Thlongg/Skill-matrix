@@ -1,0 +1,19 @@
+th.vertical{
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+/* .table > :not(caption) > * > * {
+    padding: 0px !important;
+} */
+
+th.th-full{
+    padding: 0px !important;
+    height:20px;
+}
+
+select#selected{
+    outline: none;
+    border: none;
+}

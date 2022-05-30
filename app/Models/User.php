@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'google_id',
     ];
 
     /**
@@ -41,4 +42,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function skilllevels()
+    {
+        return $this->belongsToMany(SkillLevel::class, 'skills_level', 'id', 'user_id');
+    }
 }

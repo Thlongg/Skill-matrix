@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Skill-matrix')
 @section('content')
     <div class="container">
         <a href="{{ route('levels.create') }}" class="btn btn-success">Create Level</a>
@@ -95,7 +95,7 @@
         {{ $users->links() }}
     </div>
 
-    <form action="{{ route('skill-matrix.store') }}"  method="POST">
+    <form action="{{ route('skill-matrix.store') }}" method="POST">
         @csrf
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -127,7 +127,7 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div id="show-error" class="text-danger text-center" ></div>
+                        <div id="show-error" class="text-danger text-center"></div>
 
                         <div class="mb-3">
                             <input id="lvUpdate" type="hidden" class="form-control" name="level_id">

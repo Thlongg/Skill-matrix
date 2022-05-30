@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Level')
 @section('content')
     <div class="container">
         @if (session('message'))

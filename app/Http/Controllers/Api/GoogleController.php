@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Laravel\Socialite\Facades\Socialite;
 
 class GoogleController extends Controller
@@ -66,8 +67,9 @@ class GoogleController extends Controller
             }
       
         } catch (\Exception $e) {
-            // dd($e->getMessage());
-            return redirect()->route('users.index');
+            Log::channel('custom')->info('Loi user :'.$user->id);
+            dd($e->getMessage());
+            // return redirect()->route('users.index');
         }
 
     }

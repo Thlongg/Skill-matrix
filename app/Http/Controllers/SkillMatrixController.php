@@ -6,6 +6,7 @@ use App\Services\SkillMatrixService;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 
 class SkillMatrixController extends Controller
 {
@@ -55,7 +56,8 @@ class SkillMatrixController extends Controller
 
             return view('skillmatrix.index', compact('users','skills','levels','skill_level'));
         } catch (Exception $e) {
-            return abort(502);
+            Log::channel('custom')->info('Không truy cập được máy chủ');
+            return abort(Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -67,7 +69,8 @@ class SkillMatrixController extends Controller
 
             return redirect()->route('skill-matrix.index');
         } catch (Exception $e) {
-            return abort(502);
+            Log::channel('custom')->info('Không tạo mới và update được lỗi DB');
+            return abort(Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
 }

@@ -55,7 +55,7 @@ class SkillMatrixController extends Controller
 
             return view('skillmatrix.index', compact('users','skills','levels','skill_level'));
         } catch (Exception $e) {
-            return response()->json(['status' => Response::HTTP_INTERNAL_SERVER_ERROR, 'error' => $e->getMessage()]);
+            return abort(502);
         }
     }
 
@@ -67,7 +67,7 @@ class SkillMatrixController extends Controller
 
             return redirect()->route('skill-matrix.index');
         } catch (Exception $e) {
-            return response()->json(['status' => Response::HTTP_INTERNAL_SERVER_ERROR, 'error' => $e->getMessage()]);
+            return abort(502);
         }
     }
 }

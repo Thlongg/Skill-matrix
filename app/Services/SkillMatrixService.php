@@ -30,7 +30,7 @@ class SkillMatrixService
 
     public function getSkill()
     {
-        return $this->skillMatrixRepository->getAllSkillLevel()->all();
+        return $this->skillMatrixRepository->getAllSkill()->all();
     }
 
     public function saveData($request)

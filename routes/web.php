@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\GoogleController;
 use App\Http\Controllers\SkillMatrixController;
+use App\Repositories\SkillMatrixRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -41,7 +42,7 @@ Route::prefix('auth/google')->name('google.')->group(function(){
 });
 
 Route::get('skill-matrix/index', [SkillMatrixController::class, 'index'])->name('skill-matrix.index');
-Route::post('skill-matrix/store', [SkillMatrixController::class, 'store'])->name('skill-matrix.store');
+Route::post('skill-matrix/store', [SkillMatrixController::class, 'storeOrUpdate'])->name('skill-matrix.store');
 
 
 

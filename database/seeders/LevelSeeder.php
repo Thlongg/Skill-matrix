@@ -54,12 +54,11 @@ class LevelSeeder extends Seeder
         ];
 
         try {
-            foreach($levels as $level) {
+            foreach ($levels as $level) {
                 DB::table('levels')->insert($level);
             }
         } catch (\Throwable $th) {
             //throw $th;
         }
     }
-    
 }

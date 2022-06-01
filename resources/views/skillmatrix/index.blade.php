@@ -219,7 +219,8 @@
                 autoclose: true,
                 calendarWeeks: true,
                 clearBtn: true,
-                disableTouchKeyboard: true
+                disableTouchKeyboard: true,
+                startDate: new Date(),
             });
         });
 

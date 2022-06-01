@@ -26,5 +26,4 @@ class Level extends Model
     // {
     //     return $this->belongsToMany(User::class, 'skills_level', 'id', 'id');
     // }
-
 }

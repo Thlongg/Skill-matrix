@@ -35,9 +35,9 @@ Route::controller(App\Http\Controllers\UserController::class)->prefix('users')->
     Route::delete('/{id}/destroy', 'destroy')->name('users.destroy');
 });
 
-Route::prefix('auth/google')->name('google.')->group(function(){
+Route::prefix('auth/google')->name('google.')->group(function () {
     Route::get('login', [GoogleController::class, 'loginWithGoogle'])->name('login');
-    
+
     Route::any('callback', [GoogleController::class, 'callbackFromGoogle'])->name('callback');
 });
 

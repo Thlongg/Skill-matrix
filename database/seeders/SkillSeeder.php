@@ -78,7 +78,7 @@ class SkillSeeder extends Seeder
             ],
             [
                 'skill_name' => ('AWS'),
-            ],    
+            ],
         ];
 
         try {
@@ -86,7 +86,6 @@ class SkillSeeder extends Seeder
                 DB::table('skills')->insert($skill);
             }
         } catch (\Throwable $th) {
-
         }
     }
 }

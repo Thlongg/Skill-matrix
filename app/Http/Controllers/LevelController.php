@@ -36,7 +36,7 @@ class LevelController extends Controller
      */
     public function store(Request $request)
     {
-       $dataCreate = $request->all();
+        $dataCreate = $request->all();
         $level = Level::create($dataCreate);
         return redirect()->route('skill-matrix.index')->with(['message' => 'Create success']);
     }

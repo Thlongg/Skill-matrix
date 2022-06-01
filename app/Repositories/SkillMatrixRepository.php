@@ -9,10 +9,17 @@ use App\Models\User;
 
 class SkillMatrixRepository
 {
-    protected $skill_level, $users, $skills, $levels;
+    protected $skill_level;
+    protected $users;
+    protected $skills;
+    protected $levels;
 
-    public function __construct(SkillLevel $skill_level, User $users,
-     Skill $skills,Level $levels)
+    public function __construct(
+        SkillLevel $skill_level,
+        User $users,
+        Skill $skills,
+        Level $levels
+    )
     {
         $this->skill_level = $skill_level;
         $this->users = $users;

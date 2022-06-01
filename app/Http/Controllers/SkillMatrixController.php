@@ -54,7 +54,7 @@ class SkillMatrixController extends Controller
             $levels = $this->skillMatrixService->getLevel();
             $skill_level = $this->skillMatrixService->getSkillLevel();
 
-            return view('skillmatrix.index', compact('users','skills','levels','skill_level'));
+            return view('skillmatrix.index', compact('users', 'skills', 'levels', 'skill_level'));
         } catch (Exception $e) {
             Log::channel('custom')->info('Không truy cập được máy chủ');
             return abort(Response::HTTP_INTERNAL_SERVER_ERROR);

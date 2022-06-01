@@ -4,10 +4,10 @@ namespace App\Services;
 
 use App\Repositories\SkillMatrixRepository;
 
-class SkillMatrixService 
+class SkillMatrixService
 {
     protected $skillMatrixRepository;
-    
+
     public function __construct(SkillMatrixRepository $skillMatrixRepository)
     {
         $this->skillMatrixRepository = $skillMatrixRepository;
@@ -22,7 +22,7 @@ class SkillMatrixService
     {
         return $this->skillMatrixRepository->getAllUser()->latest('id')->paginate(5);
     }
-    
+
     public function getLevel()
     {
         return $this->skillMatrixRepository->getAllLevel()->all()->sortBy('level');
@@ -42,7 +42,7 @@ class SkillMatrixService
             ['user_id', $user_id],
             ['skills_id', $skills_id]
         ])->first();
-        if($data) {
+        if ($data) {
             $data->level_id = $request->level_id;
             $data->start_date = $request->start_date;
             $data->end_date = $request->end_date;

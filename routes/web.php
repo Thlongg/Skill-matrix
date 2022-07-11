@@ -54,3 +54,33 @@ Route::controller(App\Http\Controllers\LevelController::class)->prefix('levels')
     Route::put('/{id}/update', 'update')->name('levels.update');
     Route::delete('/{id}/destroy', 'destroy')->name('levels.destroy');
 });
+
+Route::controller(App\Http\Controllers\CategoryController::class)->prefix('categories')->middleware('auth')->group(function () {
+    Route::get('', 'index')->name('categories.index');
+    Route::get('/create', 'create')->name('categories.create');
+    Route::post('/store', 'store')->name('categories.store');
+    Route::get('/{id}/edit', 'edit')->name('categories.edit');
+    Route::put('/{id}/update', 'update')->name('categories.update');
+    Route::delete('/{id}/destroy', 'destroy')->name('categories.destroy');
+});
+
+
+Route::controller(App\Http\Controllers\SubCategoryController::class)->prefix('subcategories')->middleware('auth')->group(function () {
+    Route::get('', 'index')->name('subcategories.index');
+    Route::get('/create', 'create')->name('subcategories.create');
+    Route::post('/store', 'store')->name('subcategories.store');
+    Route::get('/edit/{id}', 'edit')->name('subcategories.edit');
+    Route::put('/{id}/update', 'update')->name('subcategories.update');
+    Route::delete('/{id}/destroy', 'destroy')->name('subcategories.destroy');
+});
+
+Route::controller(App\Http\Controllers\ProductController::class)->prefix('products')->middleware('auth')->group(function () {
+    Route::get('', 'index')->name('products.index');
+    Route::get('/create', 'create')->name('products.create');
+    Route::post('/store', 'store')->name('products.store');
+    Route::get('/edit/{id}', 'edit')->name('products.edit');
+    Route::put('/{id}/update', 'update')->name('products.update');
+    Route::delete('/{id}/destroy', 'destroy')->name('products.destroy');
+});
+
+

@@ -22,7 +22,7 @@ services:
     mysql:
         image: mysql:8.0
         environment:
-            MYSQL_DATABASE: 'laravel'
+            MYSQL_DATABASE: 'project'
             MYSQL_ROOT_PASSWORD: 'root'
             MYSQL_USER: 'db' 
             MYSQL_PASSWORD: 'root'

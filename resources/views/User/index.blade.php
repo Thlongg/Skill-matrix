@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.index')
 @section('title','User')
 @section('content')
     <div class="container">
@@ -7,7 +7,6 @@
                 {{session('message')}}
             </div>
         @endif
-        <h2>List User</h2>
         <a href="{{route("users.create")}}" class="btn btn-success">Create</a>
         <table class="table table-hover">
             <thead>
@@ -25,7 +24,7 @@
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
-                    <td>
+                    <td class="d-flex">
                        <a href={{route("users.edit" ,$user->id)}} class="btn btn-warning"> Edit</a>
                         <form id="deleteform{{ $user->id }}" action="{{route("users.destroy", $user->id)}}" method="POST">
                             @method("DELETE")

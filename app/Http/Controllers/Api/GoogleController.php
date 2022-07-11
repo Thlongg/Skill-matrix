@@ -42,7 +42,7 @@ class GoogleController extends Controller
         //     throw $th;
         // }
         try {
-            $user = Socialite::driver('google')->user();
+            $user = Socialite::driver('google')->stateless()->user();
 
             $finduser = User::where('google_id', $user->id)->first();
 
@@ -63,7 +63,7 @@ class GoogleController extends Controller
                 return redirect()->route('users.index');
             }
         } catch (\Exception $e) {
-            Log::channel('custom')->info('Loi user :'.$user->id);
+            // Log::channel('custom')->info('Loi user :'.$user->id);
             dd($e->getMessage());
             // return redirect()->route('users.index');
         }

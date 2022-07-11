@@ -49,4 +49,28 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(SkillLevel::class, 'skills_level', 'id', 'user_id');
     }
+
+    public function hasRole($roleName)
+    {
+        return $this->roles->contains('name', $roleName);
+    }
+
+    public function hasPermission($permissionName)
+    {
+        $roles = $this->roles;
+
+        foreach ($roles as $role)
+        {
+            if ($role->hasPermission($permissionName))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function isSuperAdmin()
+    {
+        return $this->hasRole('SuperAdmin');
+    }
 }

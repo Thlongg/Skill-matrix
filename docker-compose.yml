@@ -29,5 +29,5 @@ services:
         volumes:
             - ./:/var/www
         ports:
-            - 3306:3306
+            - 3309:3309
         

@@ -40,7 +40,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $dataCreate = $request->all();
-        $dataCreate['image'] = Storage::putFile('public', $request->file('image'));   
+        $dataCreate['image'] = Storage::putFile('public/images', $request->file('image'));   
         Product::create([
             'name'  => $dataCreate['name'],
             'price' => $dataCreate['price'],
